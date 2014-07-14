@@ -405,6 +405,8 @@ module.exports = function(signalhost, opts) {
     // end each of the active calls
     calls.keys().forEach(callEnd);
 
+    // if a keep_signaller value has been passed, keep the signaller alive and return here
+      if(keep_signaller) return;
     // call the underlying signaller.leave (for which close is an alias)
     signaller.leave();
   };
