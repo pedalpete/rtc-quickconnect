@@ -401,7 +401,7 @@ module.exports = function(signalhost, opts) {
     The `close` function provides a convenient way of closing all associated
     peer connections.
   **/
-  signaller.close = function() {
+  signaller.close = function(keep_signaller) {
     // end each of the active calls
     calls.keys().forEach(callEnd);
 
